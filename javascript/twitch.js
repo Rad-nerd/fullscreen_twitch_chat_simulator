@@ -1,5 +1,5 @@
 var spamming = false;
-var darkMode = false;
+var darkMode = true;
 var spamType = "laughing";
 var spamSpeed = 1200;
 
