@@ -1,5 +1,5 @@
 var spamming = false;
-var darkMode = false;
+var darkMode = true; // Set to true for Dark Mode by default
 var spamType = "laughing";
 var spamSpeed = 1200;
 
@@ -10,6 +10,7 @@ function init()
     makeSettings();
     toggleSettings();
     spam();
+    darkmode(); // Apply dark mode settings on startup
 }
 
 
@@ -118,7 +119,7 @@ function clearChat()
 
 //writes the text of the input field into the chat with a random username
 function chat()
-{    
+{   
     var textfield = $("#textfield");
     var element = $("#chattext");
     
@@ -203,21 +204,23 @@ function darkmode()
     var chat = $("#chat");
     if(darkMode)
     {
-        darkMode = true;
-        chat.css("color", "black");
-        chat.css("background-color", "white");
-        $("#textfield").css("background-color", "white");
-        $("#textfield").css("color", "black");
-        $("#chattext").removeAttr("class");
-    }
-    else
-    {
-        darkMode = false;
+        // Apply Dark Mode
         chat.css("color", "white");
         chat.css("background-color", "#1e1e1e");
         $("#textfield").css("background-color", "#141414");
         $("#textfield").css("color", "white");
         $("#chattext").attr("class", "dark");
+        darkMode = false; // Next toggle will be light mode
+    }
+    else
+    {
+        // Apply Light Mode
+        chat.css("color", "black");
+        chat.css("background-color", "white");
+        $("#textfield").css("background-color", "white");
+        $("#textfield").css("color", "black");
+        $("#chattext").removeAttr("class");
+        darkMode = true; // Next toggle will be dark mode
     }
 }
 
