@@ -1,5 +1,5 @@
 var spamming = false;
-var darkMode = true;
+var darkMode = false;
 var spamType = "laughing";
 var spamSpeed = 1200;
 
@@ -203,7 +203,7 @@ function darkmode()
     var chat = $("#chat");
     if(darkMode)
     {
-        darkMode = false;
+        darkMode = true;
         chat.css("color", "black");
         chat.css("background-color", "white");
         $("#textfield").css("background-color", "white");
@@ -212,7 +212,7 @@ function darkmode()
     }
     else
     {
-        darkMode = true;
+        darkMode = false;
         chat.css("color", "white");
         chat.css("background-color", "#1e1e1e");
         $("#textfield").css("background-color", "#141414");
